@@ -40,8 +40,6 @@ def printList(L):
 def delRepeat(L):
     #your code
     h = node('dummy',L)
-    #printList(h)
-    std = h
     now = h.next
     before = h
     while now != None :
@@ -57,12 +55,11 @@ def delRepeat(L):
             else:
                 std = tmp
             tmp = tmp.next
-        
         #print('before->',before)
         if found:
             before.next = now.next
         else:
-            before = now
+            before = before.next
         #print('next before->',before)
         now = now.next
         #print('\tL-> ',end = '')
